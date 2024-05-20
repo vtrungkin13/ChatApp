@@ -1,0 +1,44 @@
+#register-page-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #image-container {
+        display: none;
+    }
+    #register-form-container {
+        width: 70%;
+    }
+    @media (min-width: 576px) {
+        #register-form-container {
+            width: 50%;
+        }
+    }
+    @media (min-width: 768px) {
+        #register-form-container {
+            width: 40%;
+        }
+    }
+    @media (min-width: 992px) {
+        #register-form-container {
+            width: 30%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #register-page-wrapper {
+        justify-content: space-between;
+        #image-container {
+            display: block;
+            width: 45%;
+            height: 100vh;
+            background-image: url('https://uitheme.net/sociala/images/login-bg.jpg');
+            background-size: cover;
+        }
+        #register-form-container {
+            flex-grow: 1;
+            margin: 0 180px;
+        }
+    }
+}

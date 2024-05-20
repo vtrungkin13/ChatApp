@@ -1,0 +1,266 @@
+@import '../../index.scss';
+
+#home-page-wrapper {
+    width: 100%;
+    height: calc(100vh - 70px);
+    margin-top: 70px;
+    #home-page-body {
+        display: flex;
+        height: 100%;
+        #user-list-container {
+            width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .user-list {
+                height: 95%;
+                width: 90%;
+                border-radius: 20px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                .search-box {
+                    background-color: $searchBarBackground;
+                    border-radius: 30px;
+                    margin: 15px 15px;
+                    padding: 0 5px;
+                    display: flex;
+                    .search-icon {
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            margin: 0 5px;
+                            font-size: 24px;
+                            color: $secondaryColor;
+                        }
+                    }
+                    input {
+                        width: 75%;
+                        padding: 10px 0;
+                        background-color: $searchBarBackground;
+                        border: none;
+                        font-size: 16px;
+                    }
+                    input:focus {
+                        outline: none;
+                    }
+                }
+                .users {
+                    flex-grow: 1;
+                    margin: 0 10px;
+                    overflow-y: auto;
+                    .no-users {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        div {
+                            text-align: center;
+                            color: $secondaryColor;
+                        }
+                    }
+                    .user {
+                        padding: 10px;
+                        border-radius: 5px;
+                        display: flex;
+                        .user-avt {
+                            width: 50px;
+                            height: 50px;
+                            img {
+                                border-radius: 25px;
+                            }
+                        }
+                        .user-name {
+                            width: calc(100% - 50px);
+                            p {
+                                margin: 5px 10px;
+                                font-weight: bold;
+                                white-space: nowrap;
+                                overflow-x: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            p:last-child {
+                                font-size: 12px;
+                                font-weight: 100;
+                                color: $secondaryColor;
+                            }
+                        }
+                    }
+                    .user:hover {
+                        background-color: $searchBarBackground;
+                        cursor: pointer;
+                    }
+                    .selected-user {
+                        background-color: $selectedUserColor;
+                    }
+                    .selected-user:hover {
+                        background-color: $selectedUserColor;
+                    }
+                }
+                .users::-webkit-scrollbar {
+                    width: 6px;
+                }
+                .users::-webkit-scrollbar-track {
+                    background: $scrollBarBackground;
+                }
+                .users::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    border: 6px solid $scrollBarColor;
+                }
+            }
+        }
+        #chat-box-container {
+            width: 75%;
+            height: 100%;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            .chat-box {
+                height: 95%;
+                width: 98%;
+                border-radius: 20px;
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+                .user-chat {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    .user-chat-info {
+                        height: 70px;
+                        border-bottom: 1px solid rgba($secondaryColor, 0.3);
+                        .info-box {
+                            display: flex;
+                            align-items: center;
+                            padding: 10px;
+                            .info-img {
+                                width: 50px;
+                                height: 50px;
+                                img {
+                                    border-radius: 25px;
+                                }
+                            }
+                            .info-name {
+                                font-weight: bold;
+                                margin: 10px;
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .user-chat-messages {
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column-reverse;
+                        overflow-y: auto;
+                        .received-message,
+                        .sent-message {
+                            margin: 10px;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .received-message {
+                            align-items: start;
+                        }
+                        .sent-message {
+                            align-items: end;
+                            .message-content {
+                                background-color: $messageBackground;
+                            }
+                        }
+                        .message-time {
+                            width: fit-content;
+                            margin: 0;
+                            padding: 0 10px;
+                            font-size: 14px;
+                            color: $secondaryColor;
+                            font-weight: 100;
+                        }
+                        .message-content {
+                            background-color: rgba($messageBackground, 0.2);
+                            width: fit-content;
+                            max-width: 40%;
+                            padding: 10px;
+                            border-radius: 10px;
+                            p {
+                                margin: 0;
+                            }
+                        }
+                        .start-chat {
+                            margin: 16px 0;
+                            p {
+                                text-align: center;
+                                font-weight: bold;
+                                color: $secondaryColor;
+                            }
+                        }
+                    }
+                    .user-chat-messages::-webkit-scrollbar {
+                        width: 6px;
+                    }
+                    .user-chat-messages::-webkit-scrollbar-track {
+                        background: $scrollBarBackground;
+                    }
+                    .user-chat-messages::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        border: 6px solid $scrollBarColor;
+                    }
+                    .chat-field {
+                        min-height: 70px;
+                        // border-top: 1px solid rgba($secondaryColor, 0.3);
+                        form {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            padding: 15px;
+                            input {
+                                flex-grow: 1;
+                                margin: 0 5px;
+                                padding: 0 10px;
+                                border-radius: 30px;
+                                background-color: $searchBarBackground;
+                                border: none;
+                            }
+                            input:focus {
+                                outline: none;
+                            }
+                            button {
+                                width: 40px;
+                                margin: 0 5px;
+                                border-radius: 30px;
+                                border: none;
+                                background-color: $messageBackground;
+                                svg {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                                svg:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+                .no-messages {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    div {
+                        p {
+                            text-align: center;
+                            margin: 5px;
+                        }
+                        p:first-child {
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+                        p:last-child {
+                            color: $secondaryColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

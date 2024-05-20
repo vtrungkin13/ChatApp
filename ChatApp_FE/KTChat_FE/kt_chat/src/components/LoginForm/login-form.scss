@@ -1,0 +1,123 @@
+@import '../../index.scss';
+
+#login-form-wrapper {
+    h1 {
+        font-weight: 900;
+    }
+    .input-field {
+        label {
+            margin-bottom: 5px;
+            span {
+                color: red;
+            }
+        }
+        input {
+            padding: 15px;
+            border: 2px solid $inputBorderColor;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input:focus {
+            border-color: $inputBorderColorFocus;
+            outline: none;
+        }
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .login-error {
+        p {
+            color: red;
+        }
+    }
+    .checkbox-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .checkbox-field {
+            display: flex;
+            align-items: center;
+            input {
+                margin: 0;
+                width: 14px;
+                height: 14px;
+            }
+            label {
+                font-size: 14px;
+                color: $secondaryColor;
+                margin-left: 5px;
+            }
+        }
+        .forgot-password-field {
+            a {
+                text-decoration: none;
+                color: $darkColor;
+                font-size: 14px;
+            }
+        }
+    }
+    .register-field {
+        margin-bottom: 10px;
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: $linkColor;
+        }
+    }
+    #login-button,
+    #google-button,
+    #facebook-button {
+        width: 100%;
+        padding: 0 20px;
+        line-height: 60px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        color: white;
+        background-color: $darkColor;
+        border: none;
+        border-radius: 5px;
+    }
+
+    #google-button {
+        background-color: $linkColor;
+    }
+    #facebook-button {
+        background-color: $facebookColor;
+    }
+    .sign-in-google,
+    .sign-in-facebook {
+        display: flex;
+        align-items: center;
+        div {
+            background-color: #fff;
+            display: flex;
+            margin: 0 10px;
+            border-radius: 3px;
+            svg {
+                padding: 5px;
+                font-size: 32px;
+            }
+        }
+    }
+
+    #login-button:hover {
+        cursor: pointer;
+        background-color: rgba($darkColor, 0.9);
+    }
+    #google-button:hover {
+        cursor: pointer;
+        background-color: rgba($linkColor, 0.9);
+    }
+    #facebook-button:hover {
+        cursor: pointer;
+        background-color: rgba($facebookColor, 0.9);
+    }
+
+    .sign-in-social {
+        text-align: center;
+        font-size: 14px;
+        color: $secondaryColor;
+        font-weight: 600;
+    }
+}
